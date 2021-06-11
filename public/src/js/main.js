@@ -48,6 +48,6 @@ for (let i = 0; i < 4; i++){
 for (let i = 0; i < 4; i++){
     bouton = document.createElement('button')
     divs[5].append(bouton);
-    const xBoutons = divs[5].getElementsByTagName('button');
+    const ligne4 = divs[5].getElementsByTagName('button');
 }
 // ./div 3
