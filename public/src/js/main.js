@@ -170,3 +170,44 @@ for (let i = 0; i < boutons.length; i++) {
 boutons[14].style.padding = "3% 9% 4% 8.5%"
 // ./css calculatrice
 
+// Atribution valeurs au boutons
+let chiffres = document.querySelectorAll('.chiffres');
+
+for (let i = 0; i < chiffres.length; i++) {
+    switch (i) {
+        case 0:
+            chiffres[0].value = "7";
+            break;
+        case 1:
+            chiffres[1].value = "8";
+            break;
+        case 2:
+            chiffres[2].value = "9";
+            break;
+        case 3:
+            chiffres[3].value = "4";
+            break;
+        case 4:
+            chiffres[4].value = "5";
+            break;
+        case 5:
+            chiffres[5].value = "6";
+            break;
+        case 6:
+            chiffres[6].value = "1";
+            break;
+        case 7:
+            chiffres[7].value = "2";
+            break;
+        case 8:
+            chiffres[8].value = "3";
+            break;
+        case 9:
+            chiffres[9].value = "0";
+            break;
+        case 10:
+            chiffres[10].value = ".";
+            break;
+    }
+}
+// ./Atribution
