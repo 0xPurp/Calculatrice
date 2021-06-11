@@ -144,7 +144,8 @@ section.style.width = "300px"
 section.style.border = "2px black solid";
 section.style.padding = "3%";
 section.style.backgroundColor = "purple";
-section.style.borderRadius = "5px";
+section.style.borderRadius = "25px";
+section.style.background = "url('https://www.euractiv.com/wp-content/uploads/sites/2/2019/08/iStock-1018336186_xl_50-800x450.jpg')";
 
 for (let i = 0; i < divs.length; i++) {
     divs[i].style.display = "flex";
@@ -152,6 +153,7 @@ for (let i = 0; i < divs.length; i++) {
 };
 
 h1.style.fontFamily = "Impact";
+h1.style.color = "white"
 h1.style.fontSize = "42px";
 h1.style.marginTop = "0%";
 h1.style.textAlign = "center";
@@ -166,8 +168,10 @@ for (let i = 0; i < boutons.length; i++) {
     boutons[i].style.margin = "2%";
     boutons[i].style.fontSize = "22px"
 };
-
-boutons[14].style.padding = "3% 9% 4% 8.5%"
+boutons[14].style.padding = "5% 7% 3% 8%"
+for (let i = 0; i < boutons.length; i++){
+    boutons[i].style.borderRadius = "25px";
+}
 // ./css calculatrice
 
 // Atribution valeurs au boutons
@@ -211,3 +215,80 @@ for (let i = 0; i < chiffres.length; i++) {
     }
 }
 // ./Atribution
+// Opérateurs
+let operations = document.querySelectorAll('.operations');
+let operateur = "";
+
+for (let i = 0; i < operations.length; i++) {
+    switch (i) {
+        case 0:
+            operations[0].value = "/";
+            break;
+        case 1:
+            operations[1].value = "*";
+            break;
+        case 2:
+            operations[2].value = "-";
+            break;
+        case 3:
+            operations[3].value = "+";
+            break;
+    };
+
+    operations[i].addEventListener('click', function () {
+        operateur = this.value;
+        input.value = operateur;
+        console.log(operateur)
+    })
+}
+
+let clear = document.querySelector('#clear');
+clear.addEventListener('click', function () {
+    input.value = "";
+    value1 = "";
+    value2 = "";
+    operateur = "";
+})
+
+let value1;
+let value2;
+let egal = document.querySelector('#egal');
+
+for (let i = 0; i < chiffres.length; i++) {
+    chiffres[i].addEventListener('click', function () {
+        if (operateur == "") {
+            input.value += chiffres[i].value;
+            value1 = Number(input.value);
+            console.log(value1)
+        } else {
+            input.value += chiffres[i].value;
+            value2 = Number(input.value.substr(1, input.value.length));
+            console.log(value2)
+        }
+    })
+}
+
+egal.addEventListener('click', function () {
+    switch (operateur) {
+        case "+":
+            input.value = value1 + value2;
+            console.log(input.value)
+            break;
+        case "-":
+            input.value = value1 - value2;
+            console.log(input.value)
+            break;
+        case "*":
+            input.value = value1 * value2;
+            console.log(input.value)
+            break;
+        case "/":
+            input.value = value1 / value2;
+            console.log(input.value)
+            break;
+    }
+    value1 = "";
+    value2 = "";
+    operateur = "";
+})
+// ./opérateurs
