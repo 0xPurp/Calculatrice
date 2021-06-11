@@ -133,3 +133,40 @@ for (let i = 0; i < boutons.length; i++) {
     }
 }
 // ./bouttons
+//css 
+body.style.height = "100vh";
+body.style.margin = "0%"
+body.style.display = "flex";
+body.style.alignItems = "center";
+body.style.justifyContent = "center";
+
+section.style.width = "300px"
+section.style.border = "2px black solid";
+section.style.padding = "3%";
+section.style.backgroundColor = "purple";
+section.style.borderRadius = "5px";
+
+for (let i = 0; i < divs.length; i++) {
+    divs[i].style.display = "flex";
+    divs[i].style.justifyContent = "center";
+};
+
+h1.style.fontFamily = "Impact";
+h1.style.fontSize = "42px";
+h1.style.marginTop = "0%";
+h1.style.textAlign = "center";
+
+input.style.textAlign = "end"
+input.style.height = "40px";
+input.style.width = "180px";
+input.style.fontSize = "26px"
+input.style.margin = "3% 4% 1% 2%";
+for (let i = 0; i < boutons.length; i++) {
+    boutons[i].style.padding = "4% 8%";
+    boutons[i].style.margin = "2%";
+    boutons[i].style.fontSize = "22px"
+};
+
+boutons[14].style.padding = "3% 9% 4% 8.5%"
+// ./css calculatrice
+
